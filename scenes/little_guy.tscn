@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cuqqrmnipg57n"]
+
+[ext_resource type="Script" uid="uid://ty5wys0eoctu" path="res://scenes/little_guy.gd" id="1_ppv50"]
+[ext_resource type="Texture2D" uid="uid://dmcvxs7ywqven" path="res://icon.svg" id="1_qctxp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qctxp"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ppv50"]
+radius = 3.0
+
+[node name="LittleGuy" type="CharacterBody2D" unique_id=944363272]
+collision_layer = 4
+script = ExtResource("1_ppv50")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1421667010]
+shape = SubResource("CircleShape2D_qctxp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1290115974]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_qctxp")
+
+[node name="SquishDetector" type="Area2D" parent="." unique_id=1407421409]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SquishDetector" unique_id=1636826907]
+shape = SubResource("CircleShape2D_ppv50")
+debug_color = Color(1.0039686, 0, 0, 0.42000002)
