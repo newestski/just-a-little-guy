@@ -23,6 +23,7 @@ func check_squish(body):
 
 
 func squish():
+	GameManager.on_squish()
 	queue_free()
 
 

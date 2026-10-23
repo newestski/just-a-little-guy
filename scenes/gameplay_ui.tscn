@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cywdccrigwbtd"]
+
+[ext_resource type="Script" uid="uid://daytgs5rccuda" path="res://kill_conter.gd" id="1_nt7q6"]
+
+[node name="gameplay_ui" type="Control" unique_id=1541568850]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="KillCounter" type="Label" parent="." unique_id=564799445]
+layout_mode = 0
+offset_right = 59.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 64
+text = "Kills: 0"
+script = ExtResource("1_nt7q6")
