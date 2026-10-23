@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cuqqrmnipg57n"]
 
-[ext_resource type="Script" uid="uid://ty5wys0eoctu" path="res://scenes/little_guy.gd" id="1_ppv50"]
+[ext_resource type="Script" uid="uid://ty5wys0eoctu" path="res://scripts/little_guy.gd" id="1_ppv50"]
 [ext_resource type="Texture2D" uid="uid://dmcvxs7ywqven" path="res://icon.svg" id="1_qctxp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qctxp"]
