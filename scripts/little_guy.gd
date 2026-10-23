@@ -2,6 +2,9 @@ class_name LittleGuy
 extends CharacterBody2D
 
 @onready var squish_detector: Area2D = $SquishDetector
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var blood_explosion: CPUParticles2D = $BloodExplosion
+@onready var squish_sound: AudioStreamPlayer2D = $SquishSound
 
 const SPEED = 50.0
 const JUMP_VELOCITY = -400.0
@@ -24,6 +27,10 @@ func check_squish(body):
 
 func squish():
 	GameManager.on_squish()
+	animated_sprite_2d.visible = false
+	blood_explosion.emitting = true
+	squish_sound.play()
+	await blood_explosion.finished
 	queue_free()
 
 
@@ -39,6 +46,10 @@ func _physics_process(delta: float) -> void:
 	#adds movement
 	if direction:
 		velocity.x = direction * SPEED
+		if direction >= 0:
+			animated_sprite_2d.flip_h = false
+		else:
+			animated_sprite_2d.flip_h = true
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
