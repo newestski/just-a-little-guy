@@ -27,7 +27,7 @@ func _physics_process(delta: float) -> void:
 			land_sound.play()
 		time_in_the_air = 0
 	
-	# Handle jump.
+	# Handle jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		jump_sound.pitch_scale = randf_range(0.9, 1.1)
@@ -67,5 +67,10 @@ func _physics_process(delta: float) -> void:
 		step_sound.pitch_scale = randf_range(0.9, 1.1)
 		step_sound.play()
 	
+	#set collision for semisolid platforms
+	if velocity.y >= 0 and !Input.is_action_pressed("fall_through"):
+		set_collision_mask_value(4, true)
+	else:
+		set_collision_mask_value(4, false)
 	
 	move_and_slide()
