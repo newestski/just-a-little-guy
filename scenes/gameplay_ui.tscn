@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://cywdccrigwbtd"]
 
-[ext_resource type="Script" uid="uid://daytgs5rccuda" path="res://kill_conter.gd" id="1_nt7q6"]
+[ext_resource type="Script" uid="uid://di2hvlsholkh0" path="res://scripts/kill_counter.gd" id="1_nm0ya"]
+[ext_resource type="FontFile" uid="uid://cv2wwv6pjnvg6" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_wf0n7"]
+
+[sub_resource type="Theme" id="Theme_bcwfe"]
+RichTextLabel/colors/font_outline_color = Color(0.1764706, 0.15686275, 0.18039216, 1)
+RichTextLabel/constants/outline_size = 6
+RichTextLabel/fonts/normal_font = ExtResource("1_wf0n7")
 
 [node name="gameplay_ui" type="Control" unique_id=1541568850]
 layout_mode = 3
@@ -8,10 +14,16 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="KillCounter" type="Label" parent="." unique_id=564799445]
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1775525527]
 layout_mode = 0
-offset_right = 59.0
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 64
-text = "Kills: 0"
-script = ExtResource("1_nt7q6")
+offset_right = 224.0
+offset_bottom = 72.0
+scale = Vector2(2, 2)
+theme = SubResource("Theme_bcwfe")
+bbcode_enabled = true
+text = "[wave]Casualities Remaining: 3"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_nm0ya")
