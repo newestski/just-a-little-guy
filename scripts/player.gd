@@ -53,6 +53,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		animated_sprite_2d.play("fall")
 	
+	animated_sprite_2d.scale.y = (1 + abs(velocity.y/1000))
+	animated_sprite_2d.scale.x = 1/(1 + abs(velocity.y/1000))
+	
+	
 	# sets flip directiond
 	if direction > 0:
 		animated_sprite_2d.flip_h = false
