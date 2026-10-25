@@ -1,13 +1,54 @@
 [gd_scene format=3 uid="uid://cuqqrmnipg57n"]
 
 [ext_resource type="Script" uid="uid://ty5wys0eoctu" path="res://scripts/little_guy.gd" id="1_ppv50"]
-[ext_resource type="Texture2D" uid="uid://dmcvxs7ywqven" path="res://icon.svg" id="1_qctxp"]
+[ext_resource type="Texture2D" uid="uid://cgpj0ligiumas" path="res://assets/sprites/little_guy.png" id="2_ppv50"]
+[ext_resource type="AudioStream" uid="uid://qm2dyb0d6eu4" path="res://assets/sounds/squish.wav" id="3_lfqh3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qctxp"]
 radius = 7.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ppv50"]
-radius = 3.0
+radius = 5.0990195
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfqh3"]
+atlas = ExtResource("2_ppv50")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25crj"]
+atlas = ExtResource("2_ppv50")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oghk0"]
+atlas = ExtResource("2_ppv50")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmu4b"]
+atlas = ExtResource("2_ppv50")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ti7me"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfqh3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25crj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oghk0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmu4b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="Curve" id="Curve_ppv50"]
+_data = [Vector2(0.0338983, 1), 0.0, 0.0, 0, 0, Vector2(0.58898306, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="LittleGuy" type="CharacterBody2D" unique_id=944363272]
 collision_layer = 4
@@ -16,10 +57,6 @@ script = ExtResource("1_ppv50")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1421667010]
 shape = SubResource("CircleShape2D_qctxp")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1290115974]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_qctxp")
-
 [node name="SquishDetector" type="Area2D" parent="." unique_id=1407421409]
 collision_layer = 2
 collision_mask = 2
@@ -27,3 +64,23 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SquishDetector" unique_id=1636826907]
 shape = SubResource("CircleShape2D_ppv50")
 debug_color = Color(1.0039686, 0, 0, 0.42000002)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=497877004]
+sprite_frames = SubResource("SpriteFrames_ti7me")
+autoplay = "default"
+frame_progress = 0.9363105
+
+[node name="BloodExplosion" type="CPUParticles2D" parent="." unique_id=178066969]
+emitting = false
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+initial_velocity_max = 200.0
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_ppv50")
+color = Color(0.85882354, 0.5882353, 0.57254905, 1)
+
+[node name="SquishSound" type="AudioStreamPlayer2D" parent="." unique_id=1150013260]
+stream = ExtResource("3_lfqh3")
+bus = &"Sounds"

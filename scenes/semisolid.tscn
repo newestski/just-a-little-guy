@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://iy7bm0lrl44l"]
+
+[ext_resource type="Texture2D" uid="uid://wmjhlgxnojra" path="res://assets/sprites/Tiles.png" id="1_envpa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsd8q"]
+atlas = ExtResource("1_envpa")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_envpa"]
+size = Vector2(16, 4)
+
+[node name="Semisolid" type="Node2D" unique_id=1280940323]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1250096297]
+texture = SubResource("AtlasTexture_xsd8q")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1961877414]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=232368363]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_envpa")
+one_way_collision = true
