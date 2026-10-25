@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bg0gc4i4afm5b"]
+
+[ext_resource type="Texture2D" uid="uid://2sgxvcfbjw27" path="res://WhatsApp Image 2026-09-20 at 12.26.18.jpeg" id="1_lc3b8"]
+[ext_resource type="Script" uid="uid://bqxrno02740x7" path="res://scripts/win_con.gd" id="1_sxbq2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mio8f"]
+
+[node name="WinCon" type="Area2D" unique_id=1972857575]
+script = ExtResource("1_sxbq2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=177105851]
+shape = SubResource("RectangleShape2D_mio8f")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=70738610]
+texture = ExtResource("1_lc3b8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -22,6 +22,7 @@ GameManager="*uid://ccm28fpad1i4h"
 [file_customization]
 
 folder_colors={
+"res://Prefabs/": "purple",
 "res://assets/": "red",
 "res://scenes/": "yellow",
 "res://scripts/": "blue"

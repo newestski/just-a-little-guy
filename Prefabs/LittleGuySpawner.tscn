@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b7js1j7nq6b67"]
+
+[ext_resource type="Texture2D" uid="uid://dmcvxs7ywqven" path="res://icon.svg" id="1_54rqa"]
+[ext_resource type="Script" uid="uid://bobglu5l4owva" path="res://scripts/little_guy_spawner.gd" id="1_ebgx7"]
+
+[node name="LittleGuySpawner" type="Node2D" unique_id=112566370]
+script = ExtResource("1_ebgx7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1320365444]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_54rqa")
+
+[node name="Timer" type="Timer" parent="." unique_id=756468598]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
