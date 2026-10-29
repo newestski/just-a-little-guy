@@ -13,17 +13,19 @@ config_version=5
 config/name="just a little guy"
 run/main_scene="uid://fd2g2vu2rk0n"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://bpg8sy5e1ohc5"
 
 [autoload]
 
 GameManager="*uid://ccm28fpad1i4h"
+MusicPlayer="*uid://dty8rtttkbw8r"
 
 [file_customization]
 
 folder_colors={
 "res://Prefabs/": "purple",
 "res://assets/": "red",
+"res://resources/": "green",
 "res://scenes/": "yellow",
 "res://scripts/": "blue"
 }

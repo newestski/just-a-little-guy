@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://bwyjtwrwt0p0l"]
+
+[ext_resource type="FontFile" uid="uid://cv2wwv6pjnvg6" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_2a54a"]
+
+[resource]
+RichTextLabel/colors/font_outline_color = Color(0.1764706, 0.15686275, 0.18039216, 1)
+RichTextLabel/constants/outline_size = 6
+RichTextLabel/fonts/normal_font = ExtResource("1_2a54a")

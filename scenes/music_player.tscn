@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dty8rtttkbw8r"]
+
+[ext_resource type="AudioStream" uid="uid://dtqfyq3kmr1bk" path="res://assets/sounds/stupid piano.mp3" id="1_jxdhu"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer" unique_id=880308184]
+stream = ExtResource("1_jxdhu")
+volume_db = -10.0
+autoplay = true

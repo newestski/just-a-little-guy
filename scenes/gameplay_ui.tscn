@@ -1,29 +1,49 @@
 [gd_scene format=3 uid="uid://cywdccrigwbtd"]
 
 [ext_resource type="Script" uid="uid://di2hvlsholkh0" path="res://scripts/kill_counter.gd" id="1_nm0ya"]
-[ext_resource type="FontFile" uid="uid://cv2wwv6pjnvg6" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_wf0n7"]
-
-[sub_resource type="Theme" id="Theme_bcwfe"]
-RichTextLabel/colors/font_outline_color = Color(0.1764706, 0.15686275, 0.18039216, 1)
-RichTextLabel/constants/outline_size = 6
-RichTextLabel/fonts/normal_font = ExtResource("1_wf0n7")
+[ext_resource type="Theme" uid="uid://bwyjtwrwt0p0l" path="res://resources/new_theme.tres" id="1_wf0n7"]
+[ext_resource type="Script" uid="uid://drbs05ygv2lur" path="res://scenes/restart_text.gd" id="3_bcwfe"]
 
 [node name="gameplay_ui" type="Control" unique_id=1541568850]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1775525527]
 layout_mode = 0
 offset_right = 224.0
 offset_bottom = 72.0
 scale = Vector2(2, 2)
-theme = SubResource("Theme_bcwfe")
+theme = ExtResource("1_wf0n7")
 bbcode_enabled = true
-text = "[wave]Casualities Remaining: 3"
+text = "[wave]Chances Remaining: 3"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("1_nm0ya")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1769154674]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = -1.0
+offset_right = 6.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_wf0n7")
+theme_override_font_sizes/normal_font_size = 50
+text = "You crushed 
+too many people!
+
+Restart!"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_bcwfe")

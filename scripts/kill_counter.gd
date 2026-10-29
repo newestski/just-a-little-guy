@@ -8,6 +8,6 @@ func _ready() -> void:
 
 
 func update_counter():
-	text = "[shake] Casualties remaining: " + str(3 - GameManager.squish_counter)
+	text = "[shake] Chances remaining: " + str(3 - GameManager.squish_counter)
 	await get_tree().create_timer(SHAKE_TIME).timeout
-	text = "[wave] Casualties remaining: " + str(3 - GameManager.squish_counter) 
+	text = "[wave] Chances remaining: " + str(3 - GameManager.squish_counter) 

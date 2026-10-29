@@ -28,7 +28,7 @@ func _physics_process(delta: float) -> void:
 		time_in_the_air = 0
 	
 	# Handle jump
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and time_in_the_air<=0.1:
 		velocity.y = JUMP_VELOCITY
 		jump_sound.pitch_scale = randf_range(0.9, 1.1)
 		jump_sound.play()
